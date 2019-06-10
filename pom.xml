@@ -19,5 +19,6 @@
     <module>cdh-sub-simple</module>
     <module>spark2-demo</module>
     <module>scala-java-demo</module>
+    <module>kafka-client-demo</module>
   </modules>
 </project>
