@@ -20,5 +20,6 @@
     <module>spark2-demo</module>
     <module>scala-java-demo</module>
     <module>kafka-client-demo</module>
+      <module>hbase-client-demo</module>
   </modules>
 </project>
