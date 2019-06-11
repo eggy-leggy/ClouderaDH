@@ -21,5 +21,6 @@
     <module>scala-java-demo</module>
     <module>kafka-client-demo</module>
       <module>hbase-client-demo</module>
+      <module>flink-demo</module>
   </modules>
 </project>
