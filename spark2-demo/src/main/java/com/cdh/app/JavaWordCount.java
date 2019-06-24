@@ -14,18 +14,20 @@ public final class JavaWordCount {
     private static final Pattern SPACE = Pattern.compile(" ");
 
     public static void main(String[] args) throws Exception {
-        System.out.println(args.length + " ------ " + args[0]);
-        if (args.length < 1) {
-            System.err.println("Usage: JavaWordCount <file>");
-            System.exit(1);
-        }
+//        System.out.println(args.length + " ------ " + args[0]);
+        String fileName = "C:\\Users\\chunqiangfan\\work\\hdfs-site.xml";
+//        if (args.length < 1) {
+//            System.err.println("Usage: JavaWordCount <file>");
+//            System.exit(1);
+//        }
 
         SparkSession spark = SparkSession
                 .builder()
                 .appName("JavaWordCount")
+                .master("local")
                 .getOrCreate();
         System.out.println("SparkSession ------- JavaWordCount");
-        JavaRDD<String> lines = spark.read().textFile(args[0]).javaRDD();
+        JavaRDD<String> lines = spark.read().textFile(fileName).javaRDD();
         System.out.println("SparkSession ------- read file");
         JavaRDD<String> words = lines.flatMap(s -> Arrays.asList(SPACE.split(s)).iterator());
         System.out.println("SparkSession ------- line flatMap");
